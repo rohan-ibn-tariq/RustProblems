@@ -33,8 +33,8 @@ fn calculate_stats(numbers: Vec<i32>) -> (f64, i32)
 ### Edge Cases to Handle
 - Empty vector: return appropriate default or error
 - Single element: median and mode are the same value
-- Multiple modes: return any one of them (or the first encountered)
-- All elements appear once: return any element as mode
+- Multiple modes: return any one of them.
+- All elements appear once: return any one of them.
 
 ### Example Usage
 ```rust
