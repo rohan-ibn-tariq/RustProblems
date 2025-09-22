@@ -22,14 +22,6 @@ HashMap<String, Vec<String>>
 - **Key**: Department name (e.g., "Engineering", "Sales")
 - **Value**: Vector of employee names in that department
 
-### Function Signatures
-```rust
-fn main() -> Result<(), Box<dyn std::error::Error>>
-fn parse_command(input: &str) -> Command
-fn add_employee(departments: &mut HashMap<String, Vec<String>>, name: String, department: String)
-fn list_department(departments: &HashMap<String, Vec<String>>, department: &str)
-fn list_all_departments(departments: &HashMap<String, Vec<String>>)
-```
 
 ### Command Interface
 
@@ -101,7 +93,7 @@ fn main() {
    
 3. **Case handling**: 
    - Command keywords ("Add", "List", "to", "all") should be case-insensitive
-   - Employee names and department names preserve original case
+   - Store names in format, first letter of the word capital and others small.
    
 4. **Whitespace handling**: 
    - Trim leading and trailing spaces from entire input
@@ -113,12 +105,11 @@ fn main() {
    - Add employee name to department vector
    - Allow same employee name in different departments
    - **Prevent duplicate names within same department**
-   - Store names exactly as entered (preserve capitalization)
+   - Store names in format, first letter of the word capital and others small.
 
 2. **Listing employees**:
    - Sort employee names alphabetically (case-insensitive comparison)
    - Sort department names alphabetically when showing all
-   - Display "No employees found" for empty departments
    - Handle non-existent departments gracefully
 
 ### String Processing Considerations
@@ -146,7 +137,6 @@ fn main() {
 - Use `HashMap::new()` for initialization
 - Use `Vec::new()` or `vec![]` for department employee lists
 - Properly handle string ownership (move vs borrow)
-- Clean up empty departments (optional enhancement)
 
 ### Example Usage
 ```
